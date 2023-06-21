@@ -1,0 +1,194 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#fondo {
+  background-image: url("./img/bufanda-cuadros-tablero-madera.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#descripcion {
+  resize: none;
+}
+
+h2 {
+  color: white;
+}
+
+.form-label {
+  color: whitesmoke;
+}
+
+.btn {
+  background-color: grey;
+  float: right;
+}
+
+img {
+  width: 100%;
+  height: 160px;
+  margin-top: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Estilos para el pie de página */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #000000;
+  color: #fff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+p {
+  margin-top: -5px;
+  padding: 5px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.opa {
+  text-align: center;
+  color: #000000;
+  margin-top: 50px !important;
+}
+
+.nose {
+  text-align: center;
+  color: #000000;
+  margin-top: 50px !important;
+}
+
+.social-media a:hover {
+  color: #007bff;
+}
+
+h3 {
+  margin-top: 40px;
+  font-size: larger;
+  font-weight: bolder;
+  color: aliceblue;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px !important;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 0px;
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5,
+.div6,
+.div7,
+.div8 {
+  background-color: #000000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  vertical-align: middle;
+  position: relative;
+  text-align: center;
+}
+
+.div1 {
+  grid-area: 2 / 3 / 6 / 5;
+}
+
+.div2 {
+  grid-area: 2 / 5 / 6 / 7;
+}
+
+.div3 {
+  grid-area: 2 / 7 / 6 / 9;
+}
+
+.div4 {
+  grid-area: 2 / 9 / 6 / 11;
+}
+
+.div5 {
+  grid-area: 7 / 3 / 11 / 5;
+}
+
+.div6 {
+  grid-area: 7 / 5 / 11 / 7;
+}
+
+.div7 {
+  grid-area: 7 / 7 / 11 / 9;
+}
+
+.div8 {
+  grid-area: 7 / 9 / 11 / 11;
+}
+
+p {
+  color: aliceblue;
+}
+
+@media screen and (max-width: 768px) {
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8 {
+    grid-area: auto / auto / auto / auto;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  #fondo {
+    background-size: cover;
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background: url("./img/bufanda-cuadros-tablero-madera.jpg") center center fixed;
+    background-size: 100% auto;
+  }
+}

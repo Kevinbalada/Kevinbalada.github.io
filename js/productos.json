@@ -1,0 +1,51 @@
+[
+    {
+      "id": "1",
+      "titulo": "Buzo orchid celeste",
+      "precio": 12000,
+      "imagen": "./img/buzo-orchid-celeste1-bbddc401c5d261495716813371687821-640-0.jpg"
+    },
+    {
+      "id": "2",
+      "titulo": "Hoodie no parking",
+      "precio": 9999,
+      "imagen": "./img/hoodie-no-parking1-411ef30883904a0bad16813332085015-640-0.jpg"
+    },
+    {
+      "id": "3",
+      "titulo": "Remera BS",
+      "precio": 8000,
+      "imagen": "./img/reme-bs90-r48-atras1-286f94ec296c80853d16836873291815-640-0.jpg"
+    },
+    {
+      "id": "4",
+      "titulo": "Remera Kiss",
+      "precio": 9000,
+      "imagen": "./img/kiss-hotter-than-hell1-77f0d2da87dbb5d6b116778496770021-640-0.jpg"
+    },
+    {
+      "id": "5",
+      "titulo": "Campera Dione",
+      "precio": 15500,
+      "imagen": "./img/DIONEnegro_3@2x.jpg"
+    },
+    {
+      "id": "6",
+      "titulo": "Campera Poseidon",
+      "precio": 19900,
+      "imagen": "./img/POSEIDONBORDO_2@2x.jpg"
+    },
+    {
+      "id": "7",
+      "titulo": "Jeans sensei",
+      "precio": 12700,
+      "imagen": "./img/SENSEI_8@2x.jpg"
+    },
+    {
+      "id": "8",
+      "titulo": "Jean bandido",
+      "precio": 12500,
+      "imagen": "./img/JeanWandideepblue1@2x.jpg"
+    }
+  ]
+  

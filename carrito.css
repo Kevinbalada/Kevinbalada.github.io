@@ -1,0 +1,135 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(./img/fondocss.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.disabled {
+  display: none;
+}
+
+/* Estilos para el carrito */
+#carrito-vacio h2 {
+  margin-bottom: 30px;
+}
+
+#carrito-productos h2 {
+  margin-bottom: 30px;
+}
+
+#carrito-acciones {
+  margin-top: 30px;
+}
+
+#carrito-comprado h2 {
+  margin-bottom: 30px;
+}
+
+#total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: #f8f9fa;
+}
+
+.navbar-nav .nav-link {
+  color: #000;
+}
+
+/* Estilos para el footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #000000;
+  color: #fff;
+}
+
+/* Estilos para el carrito de compras */
+#carrito-productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.carrito-producto img {
+  width: 100px;
+  height: 100px; 
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.carrito-producto .info {
+  flex-grow: 1;
+}
+
+.carrito-producto .info h3 {
+  margin-bottom: 5px;
+}
+
+.carrito-producto .info p {
+  margin-bottom: 5px;
+}
+
+.carrito-producto .acciones {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-producto .acciones button {
+  margin-left: 10px;
+}

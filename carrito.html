@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Ropa</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="carrito.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ 
+   
+  <div id="carrito-vacio" class="text-center mt-5"></div>
+
+  <div id="carrito-productos" class="mt-5">
+    <h2>Carrito de Compras</h2>
+    <div><h2>No hay productos en el carrito</h2></div> <!-- Ajuste realizado -->
+    <ul id="lista-productos"></ul>
+  </div>
+
+  <div id="carrito-acciones" class="text-right mt-5">
+    <button id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
+    <button id="finalizar-compra" class="btn btn-primary">Finalizar Compra</button>
+  </div>
+
+  <div id="carrito-comprado" class="text-center mt-5 disabled">
+    <h2>¡Compra realizada con éxito!</h2>
+  </div>
+
+  <div id="total" class="text-right mt-3"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/carrito.js"></script>
+  <script>
+    // Evento al cargar la página
+    window.addEventListener('DOMContentLoaded', () => {
+      mostrarProductosEnCarrito();
+    });
+  </script>
+</body>
+
+</html>
