@@ -15,10 +15,6 @@ body {
   resize: none;
 }
 
-h2 {
-  color: white;
-}
-
 .form-label {
   color: whitesmoke;
 }
@@ -30,13 +26,12 @@ h2 {
 
 img {
   width: 100%;
-  height: 160px;
+  height: auto;
   margin-top: 0px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-/* Estilos para el pie de página */
 footer {
   position: fixed;
   bottom: 0;
@@ -156,6 +151,27 @@ h1 {
 
 p {
   color: aliceblue;
+}
+
+.agregar-carrito {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.agregar-carrito:hover {
+  background-color: #0056b3;
+}
+
+.parent img {
+  width: 100%;
+  height: auto;
+  margin-top: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {

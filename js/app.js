@@ -17,7 +17,7 @@ var carrito = {
 };
 
 // Función para agregar una prenda al carrito
-function agregarPrendaAlCarrito(event) {
+async function agregarPrendaAlCarrito(event) {
   var id = parseInt(event.target.dataset.id);
 
   var producto = productos.find(function(item) {
@@ -78,35 +78,37 @@ function obtenerCarritoDeLocalStorage() {
   }
 }
 
-function mostrarCatalogo() {
-  var catalogoElement = document.getElementById("catalogo");
-  catalogoElement.innerHTML = ""; // Limpiar contenido anterior
+function mostrarCatalogo(productos) {
+  const catalogo = document.getElementById('catalogo');
 
-  productos.forEach(function(producto) {
-    var productoElement = document.createElement("div");
-    productoElement.classList.add("producto");
-
-    var nombreElement = document.createElement("h3");
-    nombreElement.textContent = producto.nombre;
-    productoElement.appendChild(nombreElement);
-
-    var precioElement = document.createElement("p");
-    precioElement.textContent = "Precio: $" + producto.precio;
-    productoElement.appendChild(precioElement);
-
-    var stockElement = document.createElement("p");
-    stockElement.textContent = "Stock: " + producto.stock;
-    productoElement.appendChild(stockElement);
-
-    var agregarElement = document.createElement("button");
-    agregarElement.textContent = "Agregar al carrito";
-    agregarElement.dataset.id = producto.id;
-    agregarElement.addEventListener("click", agregarPrendaAlCarrito);
-    productoElement.appendChild(agregarElement);
-
-    catalogoElement.appendChild(productoElement);
+  productos.forEach((producto) => {
+    const div = document.createElement('div');
+    div.classList.add('producto');
+    
+    const img = document.createElement('img');
+    img.src = producto.imagen;
+    img.alt = producto.nombre;
+    
+    const h3 = document.createElement('h3');
+    h3.textContent = producto.nombre;
+    
+    const p = document.createElement('p');
+    p.textContent = `${producto.precio}$`;
+    
+    const button = document.createElement('button');
+    button.classList.add('agregar-carrito');
+    button.setAttribute('data-id', producto.id);
+    button.textContent = 'Agregar al carrito';
+    
+    div.appendChild(img);
+    div.appendChild(h3);
+    div.appendChild(p);
+    div.appendChild(button);
+    
+    catalogo.appendChild(div);
   });
 }
+
 
 function mostrarResumenCompra() {
   var resumenElement = document.getElementById("resumen");
@@ -150,11 +152,3 @@ function mostrarResumenCompra() {
   }
 }
 
-var botonesAgregarCarrito = document.querySelectorAll(".agregar-carrito");
-botonesAgregarCarrito.forEach(function(boton) {
-  boton.addEventListener("click", agregarPrendaAlCarrito);
-});
-
-obtenerCarritoDeLocalStorage();
-mostrarCatalogo();
-mostrarResumenCompra();

@@ -4,6 +4,9 @@
 function agregarProductoAlCarrito(producto) {
   let carritoProductos = obtenerProductosDelCarrito();
 
+  // Convertir el precio a un número decimal utilizando parseFloat
+  producto.precio = parseFloat(producto.precio.replace(/\./g, '').replace(/,/g, '.'));
+
   carritoProductos.push(producto);
   guardarProductosEnCarrito(carritoProductos);
 }
@@ -21,6 +24,8 @@ function obtenerProductosDelCarrito() {
 function guardarProductosEnCarrito(productos) {
   localStorage.setItem('carritoProductos', JSON.stringify(productos));
 }
+
+// carrito.js
 
 // Función para mostrar los productos en el carrito
 function mostrarProductosEnCarrito() {
@@ -46,7 +51,7 @@ function mostrarProductosEnCarrito() {
       li.appendChild(nombre);
 
       const precio = document.createElement('p');
-      precio.textContent = producto.precio;
+      precio.textContent = formatearPrecio(producto.precio);
       li.appendChild(precio);
 
       ul.appendChild(li);
@@ -54,8 +59,11 @@ function mostrarProductosEnCarrito() {
     carritoProductosDiv.appendChild(ul);
   }
 
-  actualizarTotal(); // Actualizar el total al mostrar los productos en el carrito
+  actualizarTotal();
 }
+
+// Resto del código (agregarProductoAlCarrito, obtenerProductosDelCarrito, guardarProductosEnCarrito, formatearPrecio, mostrarCarritoVacio, vaciarCarrito, actualizarTotal, finalizarCompra, etc.)
+
 
 // Función para mostrar el mensaje de carrito vacío
 function mostrarCarritoVacio() {
@@ -63,11 +71,20 @@ function mostrarCarritoVacio() {
   carritoProductosDiv.innerHTML = '<h2>No hay productos en el carrito</h2>';
 }
 
+// Función para formatear el precio
+function formatearPrecio(precio) {
+  return precio.toLocaleString('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+
 // Función para vaciar el carrito
 function vaciarCarrito() {
   guardarProductosEnCarrito([]); // Vaciar el carrito eliminando todos los productos
   mostrarCarritoVacio(); // Mostrar el mensaje de carrito vacío
   actualizarTotal(); // Actualizar el total a cero
+
+  // Mostrar notificación de éxito usando SweetAlert
+  swal("Carrito vaciado", "Se ha vaciado el carrito de compras.", "success");
 }
 
 // Función para actualizar el total
@@ -76,11 +93,11 @@ function actualizarTotal() {
   let total = 0;
 
   carritoProductos.forEach(producto => {
-    total += parseFloat(producto.precio);
+    total += producto.precio;
   });
 
   const totalDiv = document.getElementById('total');
-  totalDiv.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total con dos decimales
+  totalDiv.textContent = `Total: ${formatearPrecio(total)}`; // Mostrar el total formateado
 }
 
 // Función para finalizar la compra
@@ -88,7 +105,9 @@ function finalizarCompra() {
   // Realizar el procesamiento adicional necesario para finalizar la compra
   // Por ejemplo, enviar los datos al servidor, generar una factura, etc.
   // Puedes agregar aquí el código específico de tu aplicación
-  // Una vez finalizada la compra, puedes mostrar un mensaje de éxito o redirigir al usuario a una página de confirmación.
+
+  // Redirigir a la sección de pagos
+  window.location.href = './pagos.html';
 }
 
 // Evento al hacer clic en el botón "Agregar al carrito"

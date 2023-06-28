@@ -1,0 +1,50 @@
+.container {
+  margin-top: 100px;
+  padding-top: 0;
+}
+
+body {
+  margin-top: 0;
+  background-image: url('./img/fondopagos.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar.fixed-top {
+  position: static;
+  margin-bottom: 0;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+#registrarme-section {
+  color: white;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 254, 254, 0.1);
+}
+
+.btn-primary {
+  margin-top: 20px;
+}
+
+.required-field {
+  color: red;
+}
+
+
+#metodos-pagos-section {
+  color: rgb(252, 248, 248);
+}
+
+
+#metodos-pagos-section .card h2,
+#metodos-pagos-section .card p {
+  color: black;
+}
